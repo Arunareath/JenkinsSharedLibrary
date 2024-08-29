@@ -1,4 +1,4 @@
-def call() {
+def call(Map args = [:]) {
     return podTemplate(
         yaml: '''
         apiVersion: v1

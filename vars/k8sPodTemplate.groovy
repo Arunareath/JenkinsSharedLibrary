@@ -1,4 +1,4 @@
-def k8sPodTemplate() {
+def call() {
     return '''
     apiVersion: v1
     kind: Pod

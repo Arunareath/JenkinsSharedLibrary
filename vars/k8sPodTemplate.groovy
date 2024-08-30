@@ -1,26 +1,21 @@
-def call(Map pipelineParams) {  
-   
-      yaml: '''  
-      apiVersion: v1  
-      kind: Pod  
-      spec:  
-       containers:  
-       - name: maven  
-        image: maven:alpine  
-        command:  
-        - cat  
-        tty: true  
-       - name: docker  
-        image: docker:latest  
-        command:  
-        - cat  
-        tty: true  
-        volumeMounts:  
-         - mountPath: /var/run/docker.sock  
-          name: docker-sock  
-       volumes:  
-       - name: docker-sock  
-        hostPath:  
-          path: /var/run/docker.sock    
-      '''    
+def k8sPodTemplate() {
+    return '''
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      labels:
+        purpose: build
+    spec:
+      containers:
+      - name: maven
+        image: maven:3.8.4-openjdk-17
+        command:
+        - cat
+        tty: true
+      - name: docker
+        image: docker:23.0.2
+        command:
+        - cat
+        tty: true
+    '''
 }

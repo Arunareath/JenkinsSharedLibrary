@@ -1,5 +1,5 @@
 def call() {  
-   return [
+   
       yaml: '''  
       apiVersion: v1  
       kind: Pod  
@@ -22,6 +22,5 @@ def call() {
        - name: docker-sock  
         hostPath:  
           path: /var/run/docker.sock    
-      '''  
-   ]  
+      '''    
 }

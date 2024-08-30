@@ -1,4 +1,4 @@
-def call() {  
+def call(Map pipelineParams) {  
    
       yaml: '''  
       apiVersion: v1  

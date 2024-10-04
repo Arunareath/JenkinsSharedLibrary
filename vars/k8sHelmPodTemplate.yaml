@@ -1,0 +1,13 @@
+def call() {
+  return '''
+  apiVersion: v1
+  kind: Pod
+  spec:
+    containers:
+    - name: helm
+      image: helm:latest
+      command:
+      - cat
+      tty: true
+  '''
+}
